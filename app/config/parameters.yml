@@ -1,0 +1,12 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: 54.86.31.208
+    database_port: null
+    database_name: MTI_cart
+    database_user: jcapps
+    database_password: 'q,7ZQ/w6'
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+    secret: 8611b85c818402d40e3bf1cb331ad69af1a2e45f

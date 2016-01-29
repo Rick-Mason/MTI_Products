@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Product list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Sku</th>
+                <th>Category</th>
+                <th>Status</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for product in products %}
+            <tr>
+                <td>{{ product.name }}</td>
+                <td>{{ product.sku }}</td>
+                <td>{{ product.category }}</td>
+                <td>{% if product.status %}Active{% else %}Inactive{% endif %}</td>
+                <td>{{ product.price }}</td>
+                <td><a href="{{ path('products_show', { 'id': product.id }) }}" class="btn btn-primary btn-sm">View</a></td>
+                <td><a href="{{ path('products_edit', { 'id': product.id }) }}" class="btn btn-primary btn-sm">Edit</a></td>
+                
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('products_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

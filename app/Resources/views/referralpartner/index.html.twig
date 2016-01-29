@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>ReferralPartner list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Referralpartnername</th>
+                <th>Referralpartnercode</th>
+                <th>Infusionsoftcontactid</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for referralPartner in referralPartners %}
+            <tr>
+                <td><a href="{{ path('referralpartner_show', { 'id': referralPartner.id }) }}">{{ referralPartner.id }}</a></td>
+                <td>{{ referralPartner.referralPartnerName }}</td>
+                <td>{{ referralPartner.referralPartnerCode }}</td>
+                <td>{{ referralPartner.infusionSoftContactId }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('referralpartner_show', { 'id': referralPartner.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('referralpartner_edit', { 'id': referralPartner.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('referralpartner_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}
